@@ -113,7 +113,11 @@ def cut_seq_to_eos(sentence, remove_id=[-1]):
 
 
 def run_model():
+<<<<<<< HEAD
     out_file = open('adv_prompt_output.txt', 'w')
+=======
+    out_file = open('output.txt', 'w')
+>>>>>>> 680bf37b64c7b17d3623d305d42ca3cd2b2cab53
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name_or_path', type=str, default='', help='pretrained model name or path to local checkpoint')
     parser.add_argument("--seed", type=int, default=42)
@@ -155,7 +159,11 @@ def run_model():
     #         lines = file.readlines()
     # with open(r'C:\Users\31300\Documents\iSAT\questions.txt') as file:
     #     lines = file.readlines()
+<<<<<<< HEAD
     with open('prompts.txt') as file:
+=======
+    with open('questions.txt') as file:
+>>>>>>> 680bf37b64c7b17d3623d305d42ca3cd2b2cab53
         lines = file.readlines()
 
 ########################### For loop to take input from text file #################
@@ -182,7 +190,11 @@ def run_model():
     for line in lines:
         # raw_text = input("USR >>> ")
         input_text = line
+<<<<<<< HEAD
         out_file.write('USR>> '+input_text+ '\n')
+=======
+        out_file.write(input_text+ '\n')
+>>>>>>> 680bf37b64c7b17d3623d305d42ca3cd2b2cab53
         print("USR >>> ", input_text)
         history.append(input_text)
         context_tokens = sum([enc.encode(h) + [EOS_ID] for h in history],[]) #+ [EOS_ID]
@@ -198,7 +210,11 @@ def run_model():
         print("SYS >>> ", text)
         history.append(text)
         history = history[-(2*args.max_history+1):]
+<<<<<<< HEAD
         out_file.write(text+'\n')
+=======
+        out_file.write(text)
+>>>>>>> 680bf37b64c7b17d3623d305d42ca3cd2b2cab53
 
 ################## While loop for accepting user input ############################
     # while True:
